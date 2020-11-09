@@ -3,52 +3,81 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ScorpionAccessManager"
+        xmlns:local="clr-namespace:ScorpionAccessManager" xmlns:vm="clr-namespace:ScorpionAccessManager.ViewModel"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
     <DockPanel>
-        <StackPanel DockPanel.Dock="Left" Background="Black">
-            <Button Background="Black" BorderThickness="0" Height="40" Width="120">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Width="120">
-                    <Image Source="Icon\card_80px.png" Height="30" Width="30" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="10,0,0,0"/>
-                    <TextBlock Text="Card" Foreground="White" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Button>
-            <Button Background="Black" BorderThickness="0" Height="40" Width="120">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Width="120">
-                    <Image Source="Icon\user_100px.png" Height="30" Width="30" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="10,0,0,0"/>
-                    <TextBlock Text="Card Holder" Foreground="White" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Button>
-            <Button Background="Black" BorderThickness="0" Height="40" Width="120">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Width="120">
-                    <Image Source="Icon\device_80px.png" Height="30" Width="30" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="10,0,0,0"/>
-                    <TextBlock Text="Device" Foreground="White" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Button>
-            <Button Background="Black" BorderThickness="0" Height="40" Width="120">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Width="120">
-                    <Image Source="Icon\door_100px.png" Height="30" Width="30" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="10,0,0,0"/>
-                    <TextBlock Text="Door" Foreground="White" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Button>
-            <Button Background="Black" BorderThickness="0" Height="40" Width="120">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Width="120">
-                    <Image Source="Icon\schedule_80px.png" Height="30" Width="30" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="10,0,0,0"/>
-                    <TextBlock Text="Schedule" Foreground="White" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Button>
-            <Button Background="Black" BorderThickness="0" Height="40" Width="120">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Width="120">
-                    <Image Source="Icon\event_80px.png" Height="30" Width="30" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="10,0,0,0"/>
-                    <TextBlock Text="Event" Foreground="White" Margin="5,0,0,0" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Button>
+        <StackPanel DockPanel.Dock="Bottom" Height="25" Background="LightGray">
 
         </StackPanel>
-        
-        <StackPanel DockPanel.Dock="Right">
+        <StackPanel Width="150" Background="#16697a">
+            <Button BorderThickness="0" Width="150" Height="50" Background="#16697a" 
+                            Command="{Binding UpdateViewCommand}" 
+                            CommandParameter="Card">
+                <StackPanel Orientation="Horizontal" Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Image Source="Icon\card_80px.png" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    <TextBlock Text="Card" Foreground="White" FontSize="12" FontFamily="Arial" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,0,0,0" />
+                </StackPanel>
+            </Button>
+            <Button BorderThickness="0" Width="150" Height="50" Background="#16697a" 
+                            Command="{Binding UpdateViewCommand}" 
+                            CommandParameter="CardHolder">
+                <StackPanel Orientation="Horizontal" Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Image Source="Icon\user_100px.png" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    <TextBlock Text="CardHolder" Foreground="White" FontSize="12" FontFamily="Arial" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,0,0,0" />
+                </StackPanel>
+            </Button>
+            <Button BorderThickness="0" Width="150" Height="50" Background="#16697a" 
+                            Command="{Binding UpdateViewCommand}" 
+                            CommandParameter="Device">
+                <StackPanel Orientation="Horizontal" Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Image Source="Icon\device_80px.png" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    <TextBlock Text="Device" Foreground="White" FontSize="12" FontFamily="Arial" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,0,0,0" />
+                </StackPanel>
+            </Button>
+            <Button BorderThickness="0" Width="150" Height="50" Background="#16697a" 
+                            Command="{Binding UpdateViewCommand}" 
+                            CommandParameter="Door">
+                <StackPanel Orientation="Horizontal" Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Image Source="Icon\door_100px.png" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    <TextBlock Text="Door" Foreground="White" FontSize="12" FontFamily="Arial" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,0,0,0" />
+                </StackPanel>
+            </Button>
+            <Button BorderThickness="0" Width="150" Height="50" Background="#16697a" 
+                            Command="{Binding UpdateViewCommand}" 
+                            CommandParameter="Schedule">
+                <StackPanel Orientation="Horizontal" Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Image Source="Icon\schedule_80px.png" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    <TextBlock Text="Schedule" Foreground="White" FontSize="12" FontFamily="Arial" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,0,0,0" />
+                </StackPanel>
+            </Button>
+            <Button BorderThickness="0" Width="150" Height="50" Background="#16697a" 
+                            Command="{Binding UpdateViewCommand}" 
+                            CommandParameter="Right">
+                <StackPanel Orientation="Horizontal" Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Image Source="Icon\right_100px.png" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    <TextBlock Text="Right" Foreground="White" FontSize="12" FontFamily="Arial" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,0,0,0" />
+                </StackPanel>
+            </Button>
+            <Button BorderThickness="0" Width="150" Height="50" Background="#16697a" 
+                            Command="{Binding UpdateViewCommand}" 
+                            CommandParameter="Event">
+                <StackPanel Orientation="Horizontal" Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <Image Source="Icon\event_80px.png" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                    <TextBlock Text="Event" Foreground="White" FontSize="12" FontFamily="Arial" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5,0,0,0" />
+                </StackPanel>
+            </Button>
             
         </StackPanel>
+        <DockPanel>
+            <StackPanel DockPanel.Dock="Left" Width="150">
+                <TreeView>
+                    
+                </TreeView>
+            </StackPanel>
+            <ContentControl Content="{Binding SelectedViewModel}"/>
+        </DockPanel>
     </DockPanel>
+    
 </Window>
