@@ -3,17 +3,20 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ScorpionAccessManager" xmlns:vm="clr-namespace:ScorpionAccessManager.ViewModel"
+        xmlns:local="clr-namespace:ScorpionAccessManager" 
+        xmlns:vm="clr-namespace:ScorpionAccessManager.ViewModel"
+        xmlns:view="clr-namespace:ScorpionAccessManager.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="600" Width="1000">
 
     <DockPanel>
-        <StackPanel DockPanel.Dock="Bottom" Height="25" Background="LightGray">
-
-        </StackPanel>
-        <StackPanel Width="150" Background="#16697a">
-            <Button BorderThickness="0" Width="150" Height="50" Background="#16697a" 
-                            Command="{Binding UpdateViewCommand}" 
+        <DockPanel DockPanel.Dock="Bottom" Height="25" Background="LightGray">
+            <TextBlock x:Name="tbViewName" DockPanel.Dock="Right" Text="Manh" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <StackPanel/>
+        </DockPanel>
+        <StackPanel Width="150" Background="#16697a" DockPanel.Dock="Left">
+            <Button x:Name="btCard" BorderThickness="0" Width="150" Height="50" Background="#16697a"
+                    Command="{Binding UpdateViewCommand}" 
                             CommandParameter="Card">
                 <StackPanel Orientation="Horizontal" Width="150" Height="50" HorizontalAlignment="Left" VerticalAlignment="Center">
                     <Image Source="Icon\card_80px.png" Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
@@ -71,11 +74,6 @@
             
         </StackPanel>
         <DockPanel>
-            <StackPanel DockPanel.Dock="Left" Width="150">
-                <TreeView>
-                    
-                </TreeView>
-            </StackPanel>
             <ContentControl Content="{Binding SelectedViewModel}"/>
         </DockPanel>
     </DockPanel>

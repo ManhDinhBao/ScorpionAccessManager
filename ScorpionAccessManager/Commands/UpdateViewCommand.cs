@@ -26,8 +26,7 @@ namespace ScorpionAccessManager.Command
 
         public void Execute(object parameter)
         {
-            Console.WriteLine("Manh");
-            if (parameter.ToString() == "ucCard")
+            if (parameter.ToString() == "Card")
             {
                 viewModel.SelectedViewModel = new CardViewModel();
             }

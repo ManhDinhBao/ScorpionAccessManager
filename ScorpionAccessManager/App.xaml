@@ -7,10 +7,10 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <DataTemplate DataType="{x:Type viewModels:CardViewModel}">
-            <views:ucCard/>
+            <views:CardView/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:CardHolderViewModel}">
-            <views:ucCardHolder/>
+            <views:CardHolderView/>
         </DataTemplate>
     </Application.Resources>
 </Application>

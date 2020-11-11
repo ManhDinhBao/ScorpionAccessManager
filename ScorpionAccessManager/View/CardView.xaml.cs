@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace ScorpionAccessManager.View
 {
     /// <summary>
-    /// Interaction logic for ucCard.xaml
+    /// Interaction logic for CardView.xaml
     /// </summary>
-    public partial class ucCard : UserControl
+    public partial class CardView : UserControl
     {
-        public ucCard()
+        public CardView()
         {
             InitializeComponent();
         }

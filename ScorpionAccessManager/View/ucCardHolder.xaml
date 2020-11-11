@@ -6,7 +6,25 @@
              xmlns:local="clr-namespace:ScorpionAccessManager.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Red">
-            
-    </Grid>
+    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="380" Background="Transparent">
+        <Border BorderBrush="Gray" CornerRadius="5" Background="White" BorderThickness="2" DockPanel.Dock="Top">
+            <DockPanel>
+                <TextBlock x:Name="tbCardHolder" Foreground="#16697a" DockPanel.Dock="Top" Text="DINH BAO MANH" FontFamily="Arial" FontSize="14" FontWeight="Bold" Margin="10,10,10,10"/>
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Margin="20,10,0,0">
+                        <Image Source="..\Icon\birthday_cake_24px.png" Width="20" Height="20"/>
+                        <TextBlock Text="12/07/1993" FontFamily="Arial" FontSize="12" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20,5,0,0">
+                        <Image Source="..\Icon\phone_26px.png" Width="20" Height="20"/>
+                        <TextBlock Text="0977822336" FontFamily="Arial" FontSize="12" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="20,5,0,0">
+                        <Image Source="..\Icon\mail_24px.png" Width="20" Height="20"/>
+                        <TextBlock Text="baomanhict@gmail.com" FontFamily="Arial" FontSize="12" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </StackPanel>
+            </DockPanel>
+        </Border>
+    </DockPanel>
 </UserControl>

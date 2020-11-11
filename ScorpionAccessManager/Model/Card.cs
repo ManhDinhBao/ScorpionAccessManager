@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -7,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace ScorpionAccessManager.Model
 {
-    public class Card: INotifyPropertyChanged
+    public class Card: ViewModelBase
     {
+
         private string serial;
 
         public string Serial
         {
             get { return serial; }
-            set 
-            { 
+            set { 
                 serial = value;
-                OnPropertyChanged("Serial");
+                RaisePropertyChanged("Serial");
             }
         }
 
@@ -26,10 +27,9 @@ namespace ScorpionAccessManager.Model
         public string Number
         {
             get { return number; }
-            set 
-            { 
+            set { 
                 number = value;
-                OnPropertyChanged("Number");
+                RaisePropertyChanged("Number");
             }
         }
 
@@ -38,10 +38,9 @@ namespace ScorpionAccessManager.Model
         public DateTime StartTime
         {
             get { return startTime; }
-            set 
-            { 
+            set { 
                 startTime = value;
-                OnPropertyChanged("StartTime");
+                RaisePropertyChanged("StartTime");
             }
         }
 
@@ -50,19 +49,9 @@ namespace ScorpionAccessManager.Model
         public DateTime EndTime
         {
             get { return endTime; }
-            set 
-            { 
+            set { 
                 endTime = value;
-                OnPropertyChanged("EndTime");
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                RaisePropertyChanged("EndTime");
             }
         }
 

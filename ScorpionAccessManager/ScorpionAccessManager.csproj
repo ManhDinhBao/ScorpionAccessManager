@@ -70,17 +70,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Command\UpdateViewCommand.cs" />
+    <Compile Include="Model\CardHolder.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\CardHolderViewModel.cs" />
     <Compile Include="ViewModel\CardViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="View\ucCard.xaml.cs">
-      <DependentUpon>ucCard.xaml</DependentUpon>
+    <Compile Include="View\CardHolderView.xaml.cs">
+      <DependentUpon>CardHolderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CardView.xaml.cs">
+      <DependentUpon>CardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\CardModel.xaml.cs">
+      <DependentUpon>CardModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DeviceView.xaml.cs">
+      <DependentUpon>DeviceView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DoorView.xaml.cs">
+      <DependentUpon>DoorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EventView.xaml.cs">
+      <DependentUpon>EventView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\RightView.xaml.cs">
+      <DependentUpon>RightView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ScheduleView.xaml.cs">
+      <DependentUpon>ScheduleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ucCardHolder.xaml.cs">
       <DependentUpon>ucCardHolder.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Commands\UpdateViewCommand.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,7 +115,35 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\ucCard.xaml">
+    <Page Include="View\CardHolderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\CardModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DeviceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\DoorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EventView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RightView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ScheduleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -130,7 +180,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Icon\card_black_50px.png" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Icon\card_80px.png" />
     <Resource Include="Icon\device_80px.png" />
@@ -141,5 +193,23 @@
     <Resource Include="Icon\schedule_80px.png" />
     <Resource Include="Icon\user_100px.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\delete_50px.png" />
+    <Resource Include="Icon\save_64px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\add_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\edit_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\birthday_cake_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\mail_24px.png" />
+    <Resource Include="Icon\phone_26px.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
