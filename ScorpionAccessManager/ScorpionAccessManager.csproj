@@ -71,10 +71,22 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\CardHolder.cs" />
+    <Compile Include="Model\Device.cs" />
+    <Compile Include="Model\Door.cs" />
+    <Compile Include="Model\DoorMode.cs" />
+    <Compile Include="Model\DoorSocket.cs" />
+    <Compile Include="Model\EDeviceControlMode.cs" />
+    <Compile Include="Model\ERightType.cs" />
+    <Compile Include="Model\Right.cs" />
+    <Compile Include="Model\Schedule.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\CardHolderViewModel.cs" />
     <Compile Include="ViewModel\CardViewModel.cs" />
+    <Compile Include="ViewModel\DeviceViewModel.cs" />
+    <Compile Include="ViewModel\DoorViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\RightViewModel.cs" />
+    <Compile Include="ViewModel\ScheduleViewModel.cs" />
     <Compile Include="View\CardHolderView.xaml.cs">
       <DependentUpon>CardHolderView.xaml</DependentUpon>
     </Compile>
@@ -210,6 +222,17 @@
     <Resource Include="Icon\mail_24px.png" />
     <Resource Include="Icon\phone_26px.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Icon\person_black_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\device_black_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\door_black_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icon\schedule_black_30px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -24,7 +24,6 @@ namespace ScorpionAccessManager
     /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Card> lstCard;
         public MainWindow()
         {
             InitializeComponent();

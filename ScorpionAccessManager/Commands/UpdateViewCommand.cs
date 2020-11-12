@@ -26,14 +26,28 @@ namespace ScorpionAccessManager.Command
 
         public void Execute(object parameter)
         {
-            if (parameter.ToString() == "Card")
+            switch (parameter.ToString())
             {
-                viewModel.SelectedViewModel = new CardViewModel();
+                case "Card":
+                    viewModel.SelectedViewModel = new CardViewModel();
+                    break;
+                case "CardHolder":
+                    viewModel.SelectedViewModel = new CardHolderViewModel();
+                    break;
+                case "Device":
+                    viewModel.SelectedViewModel = new DeviceViewModel();
+                    break;
+                case "Door":
+                    viewModel.SelectedViewModel = new DoorViewModel();
+                    break;
+                case "Schedule":
+                    viewModel.SelectedViewModel = new ScheduleViewModel();
+                    break;
+                case "Right":
+                    viewModel.SelectedViewModel = new RightViewModel();
+                    break;
             }
-            else
-            {
-                viewModel.SelectedViewModel = new CardHolderViewModel();
-            }
+
         }
     }
 }

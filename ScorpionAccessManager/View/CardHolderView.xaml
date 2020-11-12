@@ -4,9 +4,50 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:ScorpionAccessManager.View"
+              xmlns:VM="clr-namespace:ScorpionAccessManager.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+    <UserControl.DataContext>
+        <VM:CardHolderViewModel/>
+    </UserControl.DataContext>
+    <DockPanel>
+        <DockPanel>
+            <DockPanel DockPanel.Dock="Left">
+                <Border BorderBrush="Gray" Background="LightGray" BorderThickness="0" Width="150" DockPanel.Dock="Top">
+                    <TextBox Text="{Binding TextSearch,UpdateSourceTrigger=PropertyChanged}" 
+                             FontFamily="Arial" FontSize="15" Background="White"                             
+                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5"/>
+                </Border>
+                <ListView ItemsSource="{Binding View}" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <Image Source="..\Icon\person_black_26px.png" Width="25" Height="25"/>
+                                <TextBlock Margin="5,0,0,0" Text="{Binding Name}" FontSize="12" FontFamily="Arial" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </DockPanel>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Height="30" Background="LightGray">
+                <Button ToolTip="Add" BorderThickness="0" Background="LightGray" Width="30" Height="30" VerticalAlignment="Center" Margin="20,0,0,0">
+                    <Image Source="..\Icon\add_30px.png" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+                <Button ToolTip="Edit" BorderThickness="0" Background="LightGray" Width="30" Height="30" VerticalAlignment="Center">
+                    <Image Source="..\Icon\edit_50px.png" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+                <Button ToolTip="Save" BorderThickness="0" Background="LightGray" Width="30" Height="30" VerticalAlignment="Center">
+                    <Image Source="..\Icon\save_64px.png" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+                <Button ToolTip="Delete" BorderThickness="0" Background="LightGray" Width="30" Height="30" VerticalAlignment="Center" Margin="0,0,10,0">
+                    <Image Source="..\Icon\delete_50px.png" Width="20" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                </Button>
+
+            </StackPanel>
+
+            <DockPanel x:Name="dpView" Background="White">
+                
+            </DockPanel>
+        </DockPanel>
+    </DockPanel>
 </UserControl>

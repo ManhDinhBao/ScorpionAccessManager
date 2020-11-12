@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.ComponentModel;
 using GalaSoft.MvvmLight;
 using System.Collections.ObjectModel;
+using System.Windows.Data;
 
 namespace ScorpionAccessManager.ViewModel
 {
@@ -29,6 +30,30 @@ namespace ScorpionAccessManager.ViewModel
             }
         }
 
+        private ListCollectionView _view;
+        public ICollectionView View
+        {
+            get { return this._view; }
+        }
+
+        private string _textSearch;
+
+        public string TextSearch
+        {
+            get { return _textSearch; }
+            set 
+            { 
+                _textSearch = value;
+                RaisePropertyChanged("TextSearch");
+
+                if (String.IsNullOrEmpty(value))
+                    View.Filter = null;
+                else
+                    View.Filter = new Predicate<object>(o => ((Card)o).Serial == value);
+            }
+        }
+
+
         public CardViewModel()
         {
             cards = new ObservableCollection<Card>
@@ -41,6 +66,8 @@ namespace ScorpionAccessManager.ViewModel
                 new Card{Serial="106",Number="No6",StartTime=new DateTime(2020,11,06),EndTime= new DateTime(2020,12,12) },
                 new Card{Serial="107",Number="No7",StartTime=new DateTime(2020,01,01),EndTime= new DateTime(2020,12,30) },
             };
+
+            this._view = new ListCollectionView(this.cards);
         }
     }
 }

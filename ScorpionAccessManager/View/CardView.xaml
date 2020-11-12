@@ -13,13 +13,12 @@
     <DockPanel>
         <DockPanel>
             <DockPanel DockPanel.Dock="Left">
-                <Border BorderBrush="Gray" Background="White" BorderThickness="0" DockPanel.Dock="Top">
-                    <StackPanel Orientation="Horizontal" Height="30" Width="200" Background="LightGray">
-                        <TextBox FontFamily="Arial" Width="125" Background="White" Height="20" Margin="5,0,5,0"/>
-                        <Button Content="Search" FontFamily="Arial" Foreground="White" Width="60" Height="20" Background="#16697a"/>
-                    </StackPanel>
+                <Border BorderBrush="Gray" Background="LightGray" BorderThickness="0" Width="150" DockPanel.Dock="Top">
+                    <TextBox Text="{Binding TextSearch,UpdateSourceTrigger=PropertyChanged}" 
+                             FontFamily="Arial" FontSize="15" Background="White"                             
+                             HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5,5,5,5"/>
                 </Border>
-                <ListView ItemsSource="{Binding Cards}">
+                <ListView ItemsSource="{Binding View}" ScrollViewer.VerticalScrollBarVisibility="Auto">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <WrapPanel>
@@ -47,7 +46,7 @@
             </StackPanel>
 
             <DockPanel x:Name="dpView" Background="White">
-
+                
             </DockPanel>
         </DockPanel>
     </DockPanel>
